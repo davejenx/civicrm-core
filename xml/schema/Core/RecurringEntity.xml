@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Core</base>
+  <class>RecurringEntity</class>
+  <name>civicrm_recurring_entity</name>
+  <add>4.5</add>
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Recurring Entity ID</comment>
+    <add>4.5</add>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+  <field>
+    <name>recurring_schedule_id</name>
+    <title>Recurring Schedule ID</title>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>FK to civicrm_recurring_schedule.</comment>
+    <add>4.5</add>
+  </field>
+  <foreignKey>
+    <name>recurring_schedule_id</name>
+    <table>civicrm_recurring_schedule</table>
+    <key>id</key>
+    <add>4.5</add>
+    <onDelete>CASCADE</onDelete>
+  </foreignKey>
+  <field>
+    <name>entity_table</name>
+    <title>Entity Table</title>
+    <type>varchar</type>
+    <length>64</length>
+    <comment>Physical tablename for entity being scheduled, e.g. civicrm_activity</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>entity_id</name>
+    <title>Entity ID</title>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>FK to entity table specified in entity_table column.</comment>
+    <add>4.5</add>
+  </field>
+  <dynamicForeignKey>
+    <idColumn>entity_id</idColumn>
+    <typeColumn>entity_table</typeColumn>
+    <add>4.5</add>
+  </dynamicForeignKey>
+  <field>
+    <name>is_sync</name>
+    <title>Is Synchronized</title>
+    <type>boolean</type>
+    <default>1</default>
+    <comment>Has this activity been individually changed since created?</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>entity_date</name>
+    <title>Entity Date</title>
+    <type>datetime</type>
+    <comment>The recurring entity date.</comment>
+    <add>4.5</add>
+  </field>
+</table>

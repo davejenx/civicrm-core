@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Core</base>
+  <class>RecurringSchedule</class>
+  <name>civicrm_recurring_schedule</name>
+  <add>4.5</add>
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Recurring Schedule ID</comment>
+    <add>4.5</add>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+  <field>
+    <name>start_date</name>
+    <title>Start Date</title>
+    <type>datetime</type>
+    <comment>The earliest date when this recurring schedule should start.</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>end_date</name>
+    <title>End Date</title>
+    <type>datetime</type>
+    <comment>The latest date when this recurring schedule should end (optional if number_of_occurrences is set).</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>repeat_unit</name>
+    <title>Repeat Unit</title>
+    <type>varchar</type>
+    <length>16</length>
+    <comment>Repetition interval unit: daily / weekly / monthly.</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>repeat_every</name>
+    <title>Repeat Every</title>
+    <type>int unsigned</type>
+    <comment>Repetition interval quantity (range from 1 - 30): e.g. repeat_unit = weekly, repeat_every = 2 means every 2 weeks.</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>repeat_on</name>
+    <title>Repeat On</title>
+    <type>varchar</type>
+    <length>64</length>
+    <comment>For weekly only - what day(s) of week.</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>repeat_by</name>
+    <title>Repeat By</title>
+    <type>int unsigned</type>
+    <comment>For monthly only - day of month (9th of month) or day of week (second wed of month).</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>number_of_occurrences</name>
+    <title>Number of Occurrences</title>
+    <type>int unsigned</type>
+    <comment>Total number of times this event should happen.</comment>
+    <add>4.5</add>
+  </field>
+  <field>
+    <name>infinite_occurrence</name>
+    <title>Infinite Occurrence</title>
+    <type>boolean</type>
+    <default>0</default>
+    <comment>Is this an infinitely recurring series?</comment>
+    <add>4.5</add>
+  </field>
+</table>
